@@ -1,0 +1,206 @@
+\documentclass{ecnreport}
+
+\stud{Master 2 CORO-IMARO}
+\topic{Task-based control}
+\author{O. Kermorgant}
+
+\begin{document}
+
+\inserttitle{Task-based control}
+
+\insertsubtitle{Lab 1: visual servoing}
+
+\section{Goals}
+
+The goal of this lab is to observe the image-space and 3D-space behaviors that are induced when using various visual features.
+
+The ones that are considered are:
+\begin{itemize}
+ \item Cartesian coordinates of image points
+ \item Polar coordinates of image points
+ \item $2\frac{1}{2}$ visual servo
+ \item 3D translation (either $\Pass{c}{\mathbf{t}}{o}$ or $\Pass{c*}{\mathbf{t}}{c}$)
+ \item 3D rotation (either $\Pass{c}{\mathbf{R}}{c*}$ or $\Pass{c*}{\mathbf{R}}{c}$)
+\end{itemize}
+
+Several initial / desired poses are available, and some features that lead to a good behavior in some cases may lead to a undesired one in other cases.
+
+\section{Running the lab}
+
+The lab should be done on Ubuntu (either P-robotics room or the Virtual Machine).
+
+Dependencies: [`log2plot'](https://github.com/oKermorgant/log2plot), ViSP
+
+\subsection{Download and setup}
+
+You can download the lab from github. Navigate to the folder you want to place it and call:
+\begin{center}\bashstyle
+\begin{lstlisting}
+git clone https://github.com/oKermorgant/ecn_visualservo
+cd ecn_visualservo
+ideconf
+\end{lstlisting}
+\end{center}
+
+This will download the git repository and prepare everything for the compilation.\\
+You can then open QtCreator and load the \okt{CMakeLists.txt} file of this project.
+
+\subsection{Lab files}
+
+Here are the files for this project:
+
+\begin{center}
+\begin{minipage}{.4\linewidth}
+ \dirtree{%
+.1 ecn\_visualservo. 
+.2 include.
+.3 feature\_stack.h.
+.3 simulator.h.
+.2 src.
+.3 feature\_stack.cpp.
+.3 simulator.cpp.
+.2 CMakeLists.txt.
+.2 config.yaml.
+.2 main.cpp.
+} 
+\end{minipage}
+\begin{minipage}{.55\linewidth}
+ Only two files are to be modified:
+ \begin{itemize}
+  \item \okt{main.cpp}: to build the feature stack and control law
+  \item \okt{config.yaml}: configuration file to change which features you want to use
+ \end{itemize}
+\end{minipage}
+\end{center}
+
+Feel free to have a look at the other files to see how everything is done under the hood.\\
+
+The simulation runs with the green \okt{Run} button on the bottom left corner of QtCreator.\\
+Of course, as no visual feature are used initially, the camera does not move.
+
+\section{Implementation}
+
+Only a few things are to be implemented in C++ to get a valid simulation: adding features to the stack, and computing the control law.
+
+\subsection{Implement the choice of the features}
+
+In the \okt{main.cpp} file, a few design variables are loaded from the configuration (\okt{useXY, usePolar}, etc.).\\
+
+They are used to tell which features we want to use for this simulation. All these features are already available in the ViSP library, and we just have to register them inside a custom feature stack.\\
+
+The first part of this lab is hence to add features to the stack depending on the configuration variables.\\
+We assume that:
+\begin{itemize}
+ \item If \okt{useXY} is \okt{true}, we want to stack all points from the simulation with Cartesian coordinates.
+ \item If \okt{usePolar} is \okt{true}, we want to stack all points from the simulation with polar coordinates.
+ \item If \okt{use2Half} is \okt{true}, we want to stack:
+ \begin{itemize}
+  \item the center of gravity of the simulation with Cartesian coordinates
+  \item the center of gravity of the simulation with depth coordinate
+  \item a 3D rotation (either $\Pass{c}{\mathbf{R}}{c*}$ or $\Pass{c*}{\mathbf{R}}{c}$).\\Use \okt{stack.setRotation3D("cdRc")} or \okt{stack.setRotation3D("cRcd")}
+ \end{itemize}
+ \item The 3D translation and rotation are automatically used if they have a valid value in the configuration file:
+ \begin{itemize}
+  \item Translation can be \okt{"cdTc"} ($\Pass{c*}{\mathbf{t}}{c}$) or \okt{"cTo"} ($\Pass{c}{\mathbf{t}}{o}$)
+  \item Rotation can be  \okt{"cdRc"} ($\Pass{c*}{\mathbf{R}}{c}$) or \okt{"cRcd"} ($\Pass{c}{\mathbf{R}}{c*}$)
+ \end{itemize}
+\end{itemize}
+Documentation on the \okt{FeatureStack} class is available in Appendix \ref{app:stack}. It describes how to add new features to the stack.\\
+
+From this point, the stack is able to update the features from a given pose $\cMo$ and give the current features and their interaction matrix.
+
+\subsection{Implement the control law}
+
+In the main control loop, you should retrieve the current feature values \okt{s} from the stack, and their corresponding interaction matrix \okt{L}.\\
+Then compute \okt{v} as the classical control $\v = -\lambda\L^+(\s-\ss)$.\\
+
+This velocity twist will be sent to the simulation and a new pose will be computed.
+
+Some gains and parameters are loaded from the configuration: \okt{lambda, err_min}, etc.\\
+Observe what is their influence on the simulation.
+
+\section{Combining features}
+
+Test that your simulation works for all types of features. \\
+
+Initially it starts from a position tagged as \okt{cMo_t} in the configuration file, while the desired position is tagged as \okt{cdMo}.
+
+Try various combinations of starting / desired poses, together with various choices on the feature set. Typically:
+\begin{itemize}
+ \item Large translation / rotation error, using XY or Polar
+ \item 180 error using XY
+ \item Very close poses (\okt{cMo_visi})
+\end{itemize}
+
+
+What happens if many features are used at the same time, such as Cartesian + polar coordinates, or 2D + 3D features?
+
+\subsection{On Z-estimation}
+
+The \okt{z_estim} keyword of the configuration file allows changing how the Z-depth is estimated in 2D visual servoing.\\
+Compare the behavior when using the current depth (negative \okt{z_estim}), the one at desired position (set \okt{z_estim} to 0) or an arbitrary constant estimation (positive \okt{z_estim}).
+
+\subsection{Output files}
+
+All simulations are recorded so you can easily compare them. They are placed in the folder:
+\begin{center}
+ \okt{ecn_visualservo/results/<start>-<end>/<feature set>/}
+\end{center}
+All files begin with the Z-estimation method and the lambda gain in order to compare the same setup with various gains / estimation methods.
+
+
+
+\newpage
+\appendix
+
+\section{Class helpers}
+
+Below are details the useful methods of the main classes of the project. Other methods have an explicit name and can be listed from auto-completion.
+
+\subsection{The \okt{FeatureStack} class}\label{app:stack}
+
+This class is instanciated under the variable \okt{stack} in the main function. It has the following methods:
+\paragraph{Adding feature to the stack}
+\begin{itemize}
+ \item  \okt{void addFeaturePoint(vpPoint P, PointDescriptor descriptor)}
+ add a point to the stack, where \okt{descriptor} can be:
+ \begin{itemize}
+  \item \okt{PointDescriptor::XY}
+  \item \okt{PointDescriptor::Polar}
+  \item \okt{PointDescriptor::Depth}
+ \end{itemize}
+  \item  \okt{void setTranslation3D(std::string descriptor)}: adds the 3D translation feature (cTo, cdTc or none)
+  \item  \okt{void setRotation3D(std::string descriptor)}: adds the 3D rotation feature (cRcd, cdRc or none)
+  \item  \okt{void updateFeatures(vpHomogeneousMatrix cMo)}: updates the features from the passed \okt{cMo}
+\end{itemize}
+
+\paragraph{Stack information}
+\begin{itemize}
+ \item  \okt{void summary()}: prints a summary of the added features and their dimensions
+ \item  \okt{vpColVector s()}: returns the current value of the feature vector
+  \item  \okt{vpColVector sd()}: returns the desired value of the feature vector
+   \item  \okt{vpMatrix L()}: returns the current interaction matrix
+ \end{itemize}
+
+
+\subsection{The \okt{Simulator} class}\label{app:sim}
+
+This class is instanciated under the variable \okt{sim}. It has the following methods:
+\begin{itemize}
+ \item \okt{std::vector<vpPoint> observedPoints()}: returns the list of considered 3D points in the simulation
+ \item \okt{vpPoint cog()}: returns the center of gravity as a 3D point
+\end{itemize}
+
+For example, to add all points of the simulation as XY features, plus the depth of the CoG, just write:
+
+\begin{center}\cppstyle
+\begin{lstlisting}
+for(auto P: sim.observedPoints())
+    stack.addFeaturePoint(P, PointDescriptor::XY);
+    
+stack.addFeaturePoint(sim.cog(), PointDescriptor::Depth);
+\end{lstlisting}
+\end{center}
+
+
+\end{document}

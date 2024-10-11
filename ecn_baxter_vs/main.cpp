@@ -68,8 +68,8 @@ int main(int argc, char** argv)
     q = arm.jointPosition();
 
     // Perpendicular
-    L[3][4] = 1;
-    L[3][5] = -1;
+    L[3][4] = -bRc[2][2];
+    L[3][5] = bRc[2][1];
 
     // H matrix
     auto rho = arm.rho();

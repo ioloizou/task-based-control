@@ -13,6 +13,7 @@ int main(int argc, char** argv)
 
   vpColVector q = arm.init();
 
+  // Will be used to make this joints to not move
   vpColVector q_4_7(3);
   q_4_7[0] = q[4];
   q_4_7[1] = q[5];
@@ -62,12 +63,12 @@ int main(int argc, char** argv)
     ecn::putAt(L, L_k, 0, 0);
 
     // Make the interaction matrix for area
-    L[2][2] = 1;
+    L[2][2] = 3*area;
 
     // build H matrix (2nd section) using arm.rho()
     q = arm.jointPosition();
 
-    // Perpendicular
+    // Perpendicular z axis of camera and x axis of base
     L[3][4] = -bRc[2][2];
     L[3][5] = bRc[2][1];
 

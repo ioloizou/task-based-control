@@ -1,0 +1,9 @@
+{
+  "cmake.buildDirectory": "/home/ioloizou/task-based-control/build/ecn_baxter_vs",
+  "editor.mouseWheelZoom": true,
+  "cmake.configureArgs": ["CMAKE_EXPORT_COMPILE_COMMANDS=1"],
+  "clangd.arguments": [ "-pretty",
+                         "--background-index",
+                         "--compile-commands-dir=/home/ioloizou/task-based-control/build/ecn_baxter_vs/"],
+  "clangd.fallbackFlags": ["-std=c++17", "-xc++"],
+}

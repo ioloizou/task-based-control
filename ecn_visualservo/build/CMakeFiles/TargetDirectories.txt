@@ -1,0 +1,4 @@
+/home/ioloizou/task-based-control/src/ecn_visualservo/build/CMakeFiles/rebuild_cache.dir
+/home/ioloizou/task-based-control/src/ecn_visualservo/build/CMakeFiles/edit_cache.dir
+/home/ioloizou/task-based-control/src/ecn_visualservo/build/CMakeFiles/compare_features.dir
+/home/ioloizou/task-based-control/src/ecn_visualservo/build/CMakeFiles/ecn_visualservo.dir

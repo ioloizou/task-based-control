@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ecn_visualservo"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\noetic\;CMake Files\..\..\..\..\..\opt\ros\noetic\lib\;CMake Files\..\..\..\..\..\opt\ros\noetic\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\opt\ros\noetic\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\opt\ros\noetic\lib\x86_64-linux-gnu\cmake\visp\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\usr\local\lib\cmake\log2plot\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/ioloizou/task-based-control/src/ecn_visualservo/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/ioloizou/task-based-control/src/ecn_visualservo/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/ioloizou/task-based-control/src/ecn_visualservo/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="compare_features">
+				<Option output="/home/ioloizou/task-based-control/src/ecn_visualservo/build/compare_features" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ioloizou/task-based-control/src/ecn_visualservo/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBASE_PATH=&quot;/home/ioloizou/task-based-control/src/ecn_visualservo/&quot;"/>
+					<Add directory="/home/ioloizou/task-based-control/src/ecn_visualservo/include"/>
+					<Add directory="/opt/ros/noetic/include"/>
+					<Add directory="/usr/include/python3.8"/>
+					<Add directory="/opt/ros/galactic/include"/>
+					<Add directory="/usr/include/opencv4"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/usr/include/OGRE"/>
+					<Add directory="/usr/include/ois"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 compare_features"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="compare_features/fast">
+				<Option output="/home/ioloizou/task-based-control/src/ecn_visualservo/build/compare_features" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ioloizou/task-based-control/src/ecn_visualservo/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBASE_PATH=&quot;/home/ioloizou/task-based-control/src/ecn_visualservo/&quot;"/>
+					<Add directory="/home/ioloizou/task-based-control/src/ecn_visualservo/include"/>
+					<Add directory="/opt/ros/noetic/include"/>
+					<Add directory="/usr/include/python3.8"/>
+					<Add directory="/opt/ros/galactic/include"/>
+					<Add directory="/usr/include/opencv4"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/usr/include/OGRE"/>
+					<Add directory="/usr/include/ois"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 compare_features/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ecn_visualservo">
+				<Option output="/home/ioloizou/task-based-control/src/ecn_visualservo/build/libecn_visualservo.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ioloizou/task-based-control/src/ecn_visualservo/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBASE_PATH=&quot;/home/ioloizou/task-based-control/src/ecn_visualservo/&quot;"/>
+					<Add directory="/home/ioloizou/task-based-control/src/ecn_visualservo/include"/>
+					<Add directory="/opt/ros/noetic/include"/>
+					<Add directory="/usr/include/python3.8"/>
+					<Add directory="/opt/ros/galactic/include"/>
+					<Add directory="/usr/include/opencv4"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/usr/include/OGRE"/>
+					<Add directory="/usr/include/ois"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 ecn_visualservo"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ecn_visualservo/fast">
+				<Option output="/home/ioloizou/task-based-control/src/ecn_visualservo/build/libecn_visualservo.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ioloizou/task-based-control/src/ecn_visualservo/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBASE_PATH=&quot;/home/ioloizou/task-based-control/src/ecn_visualservo/&quot;"/>
+					<Add directory="/home/ioloizou/task-based-control/src/ecn_visualservo/include"/>
+					<Add directory="/opt/ros/noetic/include"/>
+					<Add directory="/usr/include/python3.8"/>
+					<Add directory="/opt/ros/galactic/include"/>
+					<Add directory="/usr/include/opencv4"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/usr/include/OGRE"/>
+					<Add directory="/usr/include/ois"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 ecn_visualservo/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/home/ioloizou/task-based-control/src/ecn_visualservo/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/ioloizou/task-based-control/src/ecn_visualservo/include/feature_stack.h">
+			<Option target="ecn_visualservo"/>
+		</Unit>
+		<Unit filename="/home/ioloizou/task-based-control/src/ecn_visualservo/include/simulator.h">
+			<Option target="ecn_visualservo"/>
+		</Unit>
+		<Unit filename="/home/ioloizou/task-based-control/src/ecn_visualservo/main.cpp">
+			<Option target="compare_features"/>
+		</Unit>
+		<Unit filename="/home/ioloizou/task-based-control/src/ecn_visualservo/src/feature_stack.cpp">
+			<Option target="ecn_visualservo"/>
+		</Unit>
+		<Unit filename="/home/ioloizou/task-based-control/src/ecn_visualservo/src/simulator.cpp">
+			<Option target="ecn_visualservo"/>
+		</Unit>
+		<Unit filename="/home/ioloizou/task-based-control/src/ecn_visualservo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/ioloizou/task-based-control/src/ecn_visualservo/../../../../../opt/ros/noetic/lib/x86_64-linux-gnu/cmake/visp/VISPConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\noetic\lib\x86_64-linux-gnu\cmake\visp\"/>
+		</Unit>
+		<Unit filename="/home/ioloizou/task-based-control/src/ecn_visualservo/../../../../../opt/ros/noetic/lib/x86_64-linux-gnu/cmake/visp/VISPConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\noetic\lib\x86_64-linux-gnu\cmake\visp\"/>
+		</Unit>
+		<Unit filename="/home/ioloizou/task-based-control/src/ecn_visualservo/../../../../../opt/ros/noetic/lib/x86_64-linux-gnu/cmake/visp/VISPModules-none.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\noetic\lib\x86_64-linux-gnu\cmake\visp\"/>
+		</Unit>
+		<Unit filename="/home/ioloizou/task-based-control/src/ecn_visualservo/../../../../../opt/ros/noetic/lib/x86_64-linux-gnu/cmake/visp/VISPModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\noetic\lib\x86_64-linux-gnu\cmake\visp\"/>
+		</Unit>
+		<Unit filename="/home/ioloizou/task-based-control/src/ecn_visualservo/../../../../../usr/local/lib/cmake/log2plot/log2plotConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\lib\cmake\log2plot\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,68 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.3"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ecn_visualservo",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "compare_features::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-compare_features-Debug-b6716624f81c7e09941e.json",
+					"name" : "compare_features",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ecn_visualservo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ecn_visualservo-Debug-4491bbdfda3024c48cd4.json",
+					"name" : "ecn_visualservo",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ioloizou/task-based-control/src/ecn_visualservo/build",
+		"source" : "/home/ioloizou/task-based-control/src/ecn_visualservo"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

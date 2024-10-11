@@ -8,8 +8,8 @@ The labs in this repository focus on various topics covered in the course, like 
 ## Contents
 
 - `ecn_visualservo/` - Simulated visual servoing with 2D cartesian, 2D polar and 2 1/2D
-- `Lab_2/` - ....
-- `Lab_3/` - ....
+- `ecn_sensorbased/` - A QP controller for doing visual servoing with the camera and controlling the robot while respecting the joint limits
+- `ecn_baxter_vs/` - Visual servoing with the baxter arm while respecting the joint limits with the weighted matrix approach
 
 ## Visuals
 
@@ -21,13 +21,16 @@ Below are some key visuals from the lab assignments, including plots, diagrams, 
   </p>
 
 ## Lab 2  
+The robot achieves its destination goal while tracking the ball with the camera and respecting joint limits
+
   <p align="center">
-  <img src="" alt="[Lab 2 Visualization" width="800">
+  <img src="https://github.com/user-attachments/assets/cfa6f904-57ed-471f-93e9-c7d2851f4b36" alt="[Lab 2 Visualization" width="800">
   </p>
   
 ## Lab 3  
+The robot arm tracks the ball while respecting the joint limits
   <p align="center">
-  <img src="" alt="[Lab 3 Visualization - Classification" width="800">
+  <img src="https://github.com/user-attachments/assets/82eb2682-32dc-4a90-ae0c-56fbff58ff72" alt="[Lab 3 Visualization - Classification" width="800">
   </p>
 
 ## How to Use
